@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://c3d2ofax264jw"]
+
+[ext_resource type="Script" uid="uid://bqhivsgrvjjo3" path="res://title_screen.gd" id="1_05l2w"]
+[ext_resource type="Texture2D" uid="uid://b8n4c27jeb2rn" path="res://ChatGPT Image 25 de mai. de 2026, 10_38_13.png" id="1_v6p8y"]
+[ext_resource type="Texture2D" uid="uid://bf6div74b3tyc" path="res://ChatGPT_Image_26_de_mai._de_2026__08_33_42-removebg-preview.png" id="4_05l2w"]
+[ext_resource type="Theme" uid="uid://w2fsrwx1fyns" path="res://defaultnew_theme.tres" id="4_hafda"]
+[ext_resource type="AudioStream" uid="uid://bpvabmda5v56p" path="res://som,jogo.ogg" id="5_hafda"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpml5"]
+
+[node name="TitleScreen" type="Control" unique_id=2130347564]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_05l2w")
+
+[node name="ChatGptImage25DeMai_De2026,103813" type="Sprite2D" parent="." unique_id=2112818713]
+position = Vector2(1000.6249, 567.5)
+scale = Vector2(1.3025717, 1.2685547)
+texture = ExtResource("1_v6p8y")
+
+[node name="bg" type="TextureRect" parent="." unique_id=812184283]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1780006642]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -72.0
+offset_right = 51.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0337226, 1.2628087)
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2125450908]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1273104568]
+layout_mode = 2
+
+[node name="game_logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1606330431]
+layout_mode = 2
+texture = ExtResource("4_05l2w")
+
+[node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1166290639]
+layout_mode = 2
+theme = ExtResource("4_hafda")
+text = "START"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=633420349]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_tpml5")
+
+[node name="credits_btn2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=856506774]
+layout_mode = 2
+theme = ExtResource("4_hafda")
+text = "CREDITS"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1672282422]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_tpml5")
+
+[node name="quit_btn3" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1177922710]
+layout_mode = 2
+theme = ExtResource("4_hafda")
+text = "QUIT GAME"
+
+[node name="CowboyDownSlashSpritesheet" type="Sprite2D" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1097529673]
+position = Vector2(343.5, 474.5)
+scale = Vector2(4.1770835, 5.90625)
+
+[node name="mochi" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1757370827]
+visible = false
+layout_mode = 2
+
+[node name="ChatGptImage26DeMai_De2026083342RemovebgPreview" type="Sprite2D" parent="." unique_id=760251290]
+position = Vector2(328, 288)
+scale = Vector2(0.7058824, 0.75)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=213091109]
+stream = ExtResource("5_hafda")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/credits_btn2" to="." method="_on_credits_btn_2_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_btn3" to="." method="_on_quit_btn_3_pressed"]

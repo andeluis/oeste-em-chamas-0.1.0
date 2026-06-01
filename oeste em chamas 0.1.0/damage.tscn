@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dddqm4xh25aon"]
+
+[ext_resource type="Script" uid="uid://cmxhvx46jdfsx" path="res://Damage.gd" id="1_rwnek"]
+[ext_resource type="Texture2D" uid="uid://d2y1wt4o6d1y0" path="res://abstract_background_with_pixel_pattern_in_bright_orange_and_yellow_colours_1707.jpg" id="2_1nyod"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6h7d3"]
+size = Vector2(226, 129.75)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=522653555]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=654480567]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=478514499]
+position = Vector2(122, 142.125)
+shape = SubResource("RectangleShape2D_6h7d3")
+script = ExtResource("1_rwnek")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=277305411]
+position = Vector2(123.99999, 139.00002)
+scale = Vector2(0.04455, 0.037267145)
+texture = ExtResource("2_1nyod")
+
+[connection signal="body_entered" from="Area2D" to="Area2D/CollisionShape2D" method="_on_area_2d_body_entered"]

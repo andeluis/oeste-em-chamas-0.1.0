@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dksb5vpdkls7i"]
+
+[ext_resource type="Script" uid="uid://b8hd4c8ar3jej" path="res://fallzone.gd" id="1_oo3u5"]
+
+[node name="fallzone" type="Area2D" unique_id=1412228844]
+collision_layer = 2
+script = ExtResource("1_oo3u5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
